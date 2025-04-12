@@ -5,8 +5,8 @@
 
 
 ### *Dependencies*:
-- *Map Integration APIs*: For location-based services (e.g., Google Maps, Leaflet.js).  
-- *Database*: To store hospital, blood bank, and user details (e.g., Firebase, MongoDB).  
+- *Map Integration APIs*: For location-based services (e.g., Google Maps API).  
+- *Database*: To store hospital, blood bank, and user details (e.g., MongoDB).  
 - *User Authentication*: Secure login and registration (e.g., OAuth, JWT).  
 - *Hosting Platform*: To deploy the website (e.g., AWS, Netlify). 
 
