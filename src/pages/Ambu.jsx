@@ -19,17 +19,17 @@ function Ambu() {
       <div className='pok mb-4 mu-4 flex-col items-center'>
         <h1><b>Emergency Response</b></h1>
         <p style={{fontSize:'20px'}}>Quick and efficient transportation to healthcare facilities during emergencies.</p>
-        <h3>Contact Us +918674985947</h3>
+        <h3>Contact Us +91867498XXXX</h3>
       </div>
       <div className='pok mb-4 flex-col items-center'>
         <h1><b>Non-Emergency Transport</b></h1>
         <p style={{fontSize:'20px'}}>Safe and reliable transport for patients requiring routine visits or transfers.</p>
-        <h3>Contact Us +918674985947</h3>
+        <h3>Contact Us +91867498XXXX</h3>
       </div>
       <div className='pok flex-col items-center'>
         <h1><b>Special Care Ambulances</b></h1>
         <p style={{fontSize:'20px'}}>Equipped with advanced medical facilities to handle critical cases.</p>
-        <h3>Contact Us +918674985947</h3>
+        <h3>Contact Us +91867498XXXX</h3>
       </div>
     </div>
 
