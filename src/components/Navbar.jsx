@@ -3,11 +3,11 @@ import { NavLink } from 'react-router-dom';
 import Dropdown from './Dropdown';
 
 function Navbar() {
-    const store = localStorage.getItem('isAuthenticated');
-    let storen = "";
-    if(store==='true'){
-    storen = JSON.parse(localStorage.getItem('user')).Name;}
-
+  const store = localStorage.getItem('isAuthenticated');
+  let storen = "";
+  if (store === 'true') {
+    storen = JSON.parse(localStorage.getItem('user')).Name;
+  }
   return (
     <div>
       <nav
@@ -21,7 +21,6 @@ function Navbar() {
           borderRadius: '12px',
         }}
       >
-        {/* Logo */}
         <div className="logo" style={{ display: 'flex', alignItems: 'center' }}>
           <svg
             width="90"
