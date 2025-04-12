@@ -6,6 +6,7 @@ const Hospital = ({data, imgUrl})=> {
       <img src={imgUrl} alt='hospital' />
       <div className='hospitalDashboard'>
       <div className='HospitalName'>
+        <div className="placeHolder">Click here</div>
           {data.website ? (
             <a
               href={data.website}
