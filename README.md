@@ -12,4 +12,4 @@
 
 ### *Working*:
 - App.jsx is the main file here; it contains all the routes.
-The Navbar of the  Home Page contains links to all our services, i.e, Hospital Finder, Medicine Shop, nearby Blood Drives (Currently under development), Blood Bank (Currently under development), Ambulance Section 
+The Navbar of the  Home Page contains links to all our services, i.e, Hospital Finder, Medicine Shop (Currently under Development), nearby Blood Drives (Currently under development), Blood Bank (Currently under development), Ambulance Section 
