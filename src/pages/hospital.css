@@ -22,8 +22,32 @@
   padding-right: 100px;
 }
 .hospitalDashboard .HospitalName{
+  position: relative;
   font-size: large;
   font-weight: bold;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.hospitalDashboard .HospitalName:hover{
+  color: red;
+
+}
+ .HospitalName:hover  .placeHolder{
+  display: inline-block;
+  
+}
+.HospitalName .placeHolder{
+  font-size: small;
+  font-weight: none;
+  position: absolute;
+  right: 0;
+  top: -50%;
+  display: none;
+  color: black;
+  background-color: beige;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 1px 2px;
 }
 
 
