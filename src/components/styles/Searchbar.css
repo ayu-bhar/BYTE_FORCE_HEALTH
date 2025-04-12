@@ -1,0 +1,10 @@
+.searchContainer{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  margin-bottom: 10px ;
+}
+.searchContainer input{
+  padding: 5px 10px;
+}
