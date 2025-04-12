@@ -1,0 +1,32 @@
+.footer{
+  /* position: absolute; */
+  box-sizing: border-box;
+  background-color: #282c34;
+  color: white;
+  padding: 20px;
+  bottom: 0;
+  width: 99vw;
+  overflow: hidden;
+}
+.name{
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+}
+.emergency{
+  color: rgb(179, 65, 65);
+}
+.foot-navBar{
+  justify-content: space-between;
+}
+.foot-navBar .content{
+  justify-content: flex-end;
+  gap: 20px;
+  width: 60vw;
+}
+@media  screen and (max-width : 500px) {
+  .footer{
+      display: none;
+  }
+}
