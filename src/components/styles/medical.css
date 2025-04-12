@@ -1,0 +1,38 @@
+/* Custom scrollbar for the medical shops list */
+.medical-shops-list-container::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+  }
+  
+  .medical-shops-list-container::-webkit-scrollbar-track {
+    background: #f0f0f0; /* Background of the scrollbar track */
+    border-radius: 10px; /* Rounded corners for the track */
+  }
+  
+  .medical-shops-list-container::-webkit-scrollbar-thumb {
+    background: #4caf50; /* Green color for the scrollbar thumb */
+    border-radius: 10px; /* Rounded corners for the thumb */
+    border: 2px solid #f0f0f0; /* Adds spacing between the thumb and track */
+  }
+  
+  .medical-shops-list-container::-webkit-scrollbar-thumb:hover {
+    background: #388e3c; /* Darker green on hover */
+  }
+
+.hospitalList::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+.hospitalList::-webkit-scrollbar-track {
+  background: #f0f0f0; /* Light gray track */
+  border-radius: 10px; /* Rounded corners for the track */
+}
+
+.hospitalList::-webkit-scrollbar-thumb {
+  background: #4caf50; /* Green scrollbar thumb */
+  border-radius: 10px; /* Rounded corners for the thumb */
+  border: 2px solid #f0f0f0; /* Adds spacing between the thumb and track */
+}
+
+.hospitalList::-webkit-scrollbar-thumb:hover {
+  background: #388e3c; /* Darker green on hover */
+}

@@ -3,7 +3,7 @@ import { GoogleMap, LoadScript, Marker, InfoWindow } from "@react-google-maps/ap
 import SearchBar from "../components/Searchbar";
 import Hospital from "./Hospital";
 import Navbar from "../components/Navbar";
-
+import '../components/styles/medical.css'
 const Mainhospital = () => {
   //all the variables used in the following component
 
@@ -106,7 +106,7 @@ const Mainhospital = () => {
   const libraries = ["places"]; // Load Places Library
 
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <Navbar/>
       
       <SearchBar onSearch={handleSearch} />
@@ -181,7 +181,7 @@ const Mainhospital = () => {
       </LoadScript>
 
       {/* Hospital List */}
-      <div className="hospitalList bg-transparent shadow-lg rounded-lg p-6 mt-6 max-h-96 overflow-y-auto">
+      <div className="hospitalList bg-transparent shadow-lg rounded-lg p-6 mt-6 max-h-96 overflow-y-auto scrollbar-thin scrollbar-thumb-green-500 scrollbar-track-gray-200">
         <h3 className="text-xl font-semibold mb-4 text-gray-800">
           Nearby Hospitals ({hospitals.length})
         </h3>
@@ -189,7 +189,7 @@ const Mainhospital = () => {
           {hospitals.map((hospital, index) => (
             <li
               key={index}
-              className="flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow duration-200 cursor-pointer"
+              className="flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-green-300 hover:shadow-md transition-shadow duration-200 cursor-pointer"
               onClick={() => setSelectedHospital(hospital)} // Set the selected hospital when clicked
             >
               {/* Left Section: Image and Details */}

@@ -77,7 +77,7 @@ function App() {
   },
   {
     path : '/medicines',
-    element : <><Navbar/><Medicine/><Footer/></>
+    element : <><Navbar/><Medicine/></>
   }
   ]);
   // const rout = createBrowserRouter([{
