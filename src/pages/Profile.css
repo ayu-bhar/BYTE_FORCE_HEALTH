@@ -1,0 +1,44 @@
+@import "tailwindcss";
+.profile-container{
+  justify-content: center;
+  gap: 20px;
+}
+.profile-container .left , .profile-container .right{
+  width: 55vw;
+  border: 1px solid black;
+  min-height: 50vh;
+  border-radius: 10px;
+}
+.profile-container .right{
+  width: 35vw;
+  border: 1px solid black;
+  min-height: 50vh;
+  border-radius: 10px;
+}
+.ld-info-up{
+  @apply font-bold text-2xl;
+}
+.ld-info-down{
+  @apply text-gray-400 border-1 w-fit px-3 py-2 rounded-xl;
+}
+.ld-info-box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.mini-infos{
+  @apply font-bold text-emerald-800 mr-3;
+}
+@media screen and (max-width : 550px){
+  .profile-container{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .profile-container .right , .profile-container .left{
+    width: 90vw;
+  }
+}
