@@ -1,16 +1,16 @@
 import React, { useState, useEffect, useRef } from "react";
 import { GoogleMap, LoadScript, Marker, InfoWindow } from "@react-google-maps/api";
 import SearchBar from "../components/Searchbar";
-import Hospital from "./Hospital";
+import Bloodbank from "./BloodBanks";
 import Navbar from "../components/Navbar";
 import '../components/styles/medical.css'
 const Mainbloodbank = () => {
   //all the variables used in the following component
 
   const [location, setLocation] = useState(null); // User's current location
-  const [query, setQuery] = useState("hospitals"); // Search query
-  const [hospitals, setBloodbank] = useState([]); // Nearby hospitals
-  const [selectedHospital, setSelectedBloodbank] = useState(null); // Selected hospital for InfoWindow
+  const [query, setQuery] = useState("bloodbank"); // Search query
+  const [bloodbank, setBloodbank] = useState([]); // Nearby bloodbank
+  const [selectedBloodbank, setSelectedBloodbank] = useState(null); // Selected bloodbank for InfoWindow
   const mapRef = useRef(null); // Map reference
   const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY; // Google Maps API key
   const containerStyle = {
@@ -46,7 +46,7 @@ const Mainbloodbank = () => {
       : "default-hospital.jpg";
   };
 
-  // Perform hospital search
+  // Perform bloodbank search
   const searchNearbyBloodbank = (keyword) => {
     if (!mapRef.current || !window.google) return;
   
@@ -141,7 +141,7 @@ const Mainbloodbank = () => {
               />
             ))}
 
-            {/* InfoWindow for the selected hospital */}
+            {/* InfoWindow for the selected bloodbank */}
             {selectedBloodbank && (
               <InfoWindow
                 position={{
@@ -180,7 +180,7 @@ const Mainbloodbank = () => {
         )}
       </LoadScript>
 
-      {/* Hospital List */}
+      {/* bloodbank List */}
       <div className="hospitalList bg-transparent shadow-lg rounded-lg p-6 mt-6 max-h-96 overflow-y-auto scrollbar-thin scrollbar-thumb-green-500 scrollbar-track-gray-200">
         <h3 className="text-xl font-semibold mb-4 text-gray-800">
           Nearby Bloodbank ({bloodbank.length})
@@ -190,7 +190,7 @@ const Mainbloodbank = () => {
             <li
               key={index}
               className="flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-green-300 hover:shadow-md transition-shadow duration-200 cursor-pointer"
-              onClick={() => setSelectedBloodbank(bloodbank)} // Set the selected hospital when clicked
+              onClick={() => setSelectedBloodbank(bloodbank)} // Set the selected bloodbank when clicked
             >
               {/* Left Section: Image and Details */}
               <div className="flex items-center">
