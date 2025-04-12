@@ -5,14 +5,14 @@ import Hospital from "./Hospital";
 import Navbar from "../components/Navbar";
 
 const Mainhospital = () => {
+  //all the variables used in the following component
+
   const [location, setLocation] = useState(null); // User's current location
-  const [query, setQuery] = useState(""); // Search query
+  const [query, setQuery] = useState("hospitals"); // Search query
   const [hospitals, setHospitals] = useState([]); // Nearby hospitals
   const [selectedHospital, setSelectedHospital] = useState(null); // Selected hospital for InfoWindow
   const mapRef = useRef(null); // Map reference
-
   const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY; // Google Maps API key
-
   const containerStyle = {
     width: "100%",
     height: "400px",
@@ -51,6 +51,7 @@ const Mainhospital = () => {
     if (!mapRef.current || !window.google) return;
 
     const service = new window.google.maps.places.PlacesService(mapRef.current);
+    //using PlacesService for simplicity
 
     const request = {
       location: location,
@@ -81,6 +82,7 @@ const Mainhospital = () => {
   return (
     <div>
       <Navbar/>
+      
       <SearchBar onSearch={handleSearch} />
 
       {/* Load Maps JavaScript SDK */}
