@@ -56,7 +56,7 @@ function App() {
   },
   {
     path:'/carecompass',
-    element : <><Care/></>
+    element : <><Care/><Footer/></>
   },
   {
     path : '/signup',

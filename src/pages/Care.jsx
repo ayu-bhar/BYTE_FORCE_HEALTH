@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+
 
 function Care() {
     return (
@@ -115,7 +115,7 @@ function Care() {
                     </p>
                 </div>
             </div>
-            <Footer />
+           
         </div>
     );
 }
