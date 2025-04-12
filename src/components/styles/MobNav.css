@@ -1,0 +1,54 @@
+@media screen  and (min-width: 850px) {
+    #mobNavBar .left{
+        display: none;
+    }
+    #mobNavBar .upper{
+        display: none;
+    }
+}
+.mobnavBar{
+    list-style: none;
+    gap: 10px;
+    transition: width 0.5s;
+    /* border: 2px solid #282c34; */
+    width: fit-content;
+    padding: 0 20px ;
+}
+.mobnavBar .content{
+    gap: 5px;
+    font-weight: bold;
+    text-size-adjust: 1.5em;
+}
+.show{
+    padding: 0 20px;
+}
+.left{
+    /* border: 2px solid #282c34; */
+    border-top: transparent;
+    width: fit-content;
+}
+
+.hideL{
+    transform: translateX(-100%);
+    transition: 0.3s ease;
+}
+.showL{
+    transform: translateX(0%);
+    transition: 0.3s ease;
+}
+
+.upper{
+    box-sizing: border-box;
+    width: 100vw;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.upper h2{
+    font-weight: bold;
+    font-size: 30px;
+}
+.upper .up-right{
+    flex-wrap: wrap;
+    width: 20vw;
+    justify-content: space-between;
+}
