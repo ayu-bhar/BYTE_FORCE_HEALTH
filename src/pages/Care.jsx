@@ -4,51 +4,120 @@ import Footer from "../components/Footer";
 
 function Care() {
     return (
-
-        <div>
+        <div style={{
+            fontFamily: 'Arial, sans-serif',
+            background: 'linear-gradient(to bottom, #a8e6cf, #dcedc1)', // Green gradient remains for the background
+            padding: '20px',
+            minHeight: '100vh'
+        }}>
             <Navbar />
-            <div>
-                <h1 style={{ fontSize: '40px', textAlign: 'center', marginBottom: '20px', boxShadow: '2px 2px 2px grey', textShadow: '3px 3px 3px grey' }}><b>CareCompass</b></h1>
+            <div style={{
+                margin: '40px auto',
+                maxWidth: '800px',
+                textAlign: 'center',
+                padding: '30px',
+                borderRadius: '15px',
+                backgroundColor: '#ffffff',
+                boxShadow: '0 6px 12px rgba(0, 0, 0, 0.15)',
+                border: '1px solid #e2e8f0'
+            }}>
+                {/* Title */}
+                <h1 style={{
+                    fontSize: '40px',
+                    fontWeight: 'bold',
+                    marginBottom: '25px',
+                    textShadow: '3px 3px 5px #a0aec0', // Adjusted shadow for title
+                    color: '#1a202c'
+                }}>
+                    CareCompass
+                </h1>
 
-                At Health Buddies, we believe that knowledge is power when it comes to health and well-being. Our awareness programs are designed to educate, engage, and empower communities to take proactive steps towards healthier lives.
+                {/* Mission Section */}
+                <p style={{
+                    fontSize: '18px',
+                    lineHeight: '1.8',
+                    color: '#4a5568',
+                    marginBottom: '30px',
+                    textAlign: 'justify'
+                }}>
+                    Welcome to <b>Health Buddies</b>! At CareCompass, we believe that awareness is the key to a healthier and happier life. Our mission is to educate and empower communities to take proactive steps toward well-being by providing practical health tips and resources.
+                </p>
 
+                {/* Key Highlights Section */}
+                <div style={{ textAlign: 'left', fontSize: '16px', marginBottom: '25px' }}>
+                    <h2 style={{
+                        fontSize: '24px',
+                        fontWeight: 'bold',
+                        marginBottom: '15px',
+                        color: '#2d3748'
+                    }}>
+                        Highlights:
+                    </h2>
+                    <ul style={{
+                        listStyleType: 'square',
+                        paddingLeft: '25px',
+                        lineHeight: '1.8',
+                        color: '#4a5568' // Neutral color for list items
+                    }}>
+                        <li><b>Emergency Preparedness:</b> Guidance for managing medical emergencies efficiently.</li>
+                        <li><b>Basic First Aid:</b> Quick tips to handle emergencies like CPR and treating wounds.</li>
+                        <li><b>Healthy Lifestyle Tips:</b> Insights for balanced nutrition, exercise, and mental well-being.</li>
+                        <li><b>Daily Hygiene Habits:</b> Simple practices for maintaining cleanliness and health.</li>
+                    </ul>
+                </div>
 
-                <li><b>Emergency Preparedness:</b> Guidance on handling medical emergencies and knowing when and how to seek help.</li>
-                <li><b>Basic First Aid Tips:</b> Life-saving tips for immediate care during emergencies, such as treating cuts, burns, and performing CPR.   </li>
-                <li><b>Promoting Regular Health Checkups:</b> Encouraging preventive measures to identify and address health issues early.   </li>
-                <li><b>Healthy Lifestyle Choices:</b> Tips for nutrition, exercise, mental health, and overall well-being.   </li>
-                <li><b>Basic Hygiene Practices:</b> Simple yet effective tips to maintain hygiene, such as frequent handwashing, sanitizing surfaces, and proper waste disposal.   </li>
-                <li><b>Daily Hygiene Habits:</b> Incorporating cleanliness into everyday routines:   </li>
+                {/* First Aid Section */}
+                <div style={{ textAlign: 'left', fontSize: '16px', marginBottom: '25px' }}>
+                    <h2 style={{
+                        fontSize: '24px',
+                        fontWeight: 'bold',
+                        marginBottom: '15px',
+                        color: '#2d3748'
+                    }}>
+                        Basic First Aid:
+                    </h2>
+                    <ul style={{
+                        listStyleType: 'circle',
+                        paddingLeft: '25px',
+                        lineHeight: '1.8',
+                        color: '#4a5568'
+                    }}>
+                        <li>Perform the 3 Cs: Check your surroundings, Call for help, and Care for the injured.</li>
+                        <li>Check for responsiveness and breathing.</li>
+                        <li>Stop bleeding and clean wounds carefully.</li>
+                        <li>Stay calm and act efficiently.</li>
+                    </ul>
+                </div>
 
-                <li><b>Morning Rituals:</b>Brush your teeth at least twice a day, wash your face, and take a refreshing shower. </li>
-                <li><b>Hand Hygiene:</b> Wash your hands before eating, after using the restroom, or touching dirty surfaces.  </li>
-                <li><b>Clean Clothes:</b> Wear fresh, clean clothes daily to prevent the buildup of germs.   </li>
-                <li><b>Hydration and Nutrition: </b>Keep water bottles clean and store food properly to maintain freshness. </li>
-                <li><b>Personal Belongings:</b> Regularly sanitize items like phones, wallets, and other frequently-used accessories.   </li>
-                <li style={{ marginBottom: '10px' }}><b>Before Bedtime:</b> Wash your face to remove dirt and pollutants, and ensure your sleeping environment is clean and comfortable. </li>
-
-                <h1 style={{ fontSize: '20px' }}><b>Some Basic First Aid tips</b></h1>
-                <li>Perform the 3 Cs of first aid before doing any care work—check your surroundings for safety, call for help, and then care for the person.</li>
-                <li>Check if an unconscious person is responsive or breathing. Give rescue breaths and chest compressions if they’re unresponsive but have a pulse.</li>
-                <li>Wear gloves to protect yourself from bloodborne pathogens while treating cuts, scrapes, minor burns, or other injuries.</li>
-                <li>Remain calm when providing first aid, as this will help you think clearly and act quickly.</li>
-                <li>Assess the situation and determine the person’s needs. </li>
-                <li>Call for help.</li>
-                <li>Stop the bleeding.</li>
-                <li>Stay with the person</li>
-                <li>Maintain body heat</li>
-                <li>Clean wounds</li>
-                <h1 style={{ fontSize: '20px' }}> <b>Our Mission:</b>  </h1>
-                To foster a culture of health awareness that empowers individuals to make informed decisions for themselves and their loved ones. Together, we aim to create a community that prioritizes prevention, preparedness, and good health practices every single day.
-
-                Join us in spreading awareness, saving lives, and building a healthier future for all!
-
+                {/* Call to Action Section */}
+                <div style={{
+                    padding: '20px',
+                    borderRadius: '10px',
+                    backgroundColor: '#b2f0d5', // Vibrant green background for call-to-action remains
+                    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+                    textAlign: 'center',
+                    border: '1px solid #88d498'
+                }}>
+                    <h2 style={{
+                        fontSize: '22px',
+                        fontWeight: 'bold',
+                        marginBottom: '10px',
+                        color: '#2563eb'
+                    }}>
+                        Join Us!
+                    </h2>
+                    <p style={{
+                        fontSize: '16px',
+                        lineHeight: '1.8',
+                        color: '#4a5568'
+                    }}>
+                        Together, we can spread awareness and build a community that prioritizes health and preparedness. Join us in making a difference for a better tomorrow!
+                    </p>
+                </div>
             </div>
-            <br />
             <Footer />
         </div>
-
-    )
+    );
 }
 
-export default Care 
+export default Care;

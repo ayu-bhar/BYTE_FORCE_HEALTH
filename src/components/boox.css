@@ -6,7 +6,9 @@
        align-items: center;
        justify-content: center;
        background-color: aliceblue;
-       box-shadow: 1px 2px 2px gray;
+       box-shadow: 1px 2px 2px greenyellow;
+       padding: 0;
+       margin: 0;
        
 
 }
