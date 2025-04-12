@@ -49,26 +49,52 @@ const Mainhospital = () => {
   // Perform hospital search
   const searchNearbyHospitals = (keyword) => {
     if (!mapRef.current || !window.google) return;
-
+  
     const service = new window.google.maps.places.PlacesService(mapRef.current);
-    //using PlacesService for simplicity
-
+  
     const request = {
       location: location,
       radius: 5000,
-      keyword: keyword || "hospital", // Default to hospitals if no keyword provided
+      keyword: keyword || "hospital",
       type: "hospital",
     };
-
+  
     service.nearbySearch(request, (results, status) => {
       if (status === window.google.maps.places.PlacesServiceStatus.OK) {
-        setHospitals(results);
+        const detailedHospitals = [];
+        let completed = 0;
+  
+        results.forEach((place) => {
+          service.getDetails(
+            {
+              placeId: place.place_id,
+              fields: [
+                "name",
+                "vicinity",
+                "geometry",
+                "photos",
+                "opening_hours",
+                "website",
+              ],
+            },
+            (result, status) => {
+              completed++;
+              if (status === window.google.maps.places.PlacesServiceStatus.OK) {
+                detailedHospitals.push(result);
+              }
+              if (completed === results.length) {
+                setHospitals(detailedHospitals);
+              }
+            }
+          );
+        });
       } else {
         console.error("Places request failed:", status);
         setHospitals([]);
       }
     });
   };
+  
 
   const handleSearch = (val) => {
     setQuery(val);
