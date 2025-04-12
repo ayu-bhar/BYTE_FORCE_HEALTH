@@ -14,6 +14,7 @@ import Login from './pages/Login'
 import ProtectedRoute from './components/ProtectedRoute'
 import Care from './pages/Care'
 import Mainhospital from './pages/Mainhospital'
+import Medicine from './pages/Medicine'
 
 
 function App() {
@@ -63,7 +64,7 @@ function App() {
   },
   {
     path : '/login',
-    element : <><Login
+    element : <><Navbar/><Login
     isAuthenticated={isAuthenticated}
     setIsAuthenticated={setIsAuthenticated}
   /><Footer/></>
@@ -73,6 +74,10 @@ function App() {
     path : '/hospital',
     element : <><Mainhospital/></>,
 
+  },
+  {
+    path : '/medicines',
+    element : <><Navbar/><Medicine/><Footer/></>
   }
   ]);
   // const rout = createBrowserRouter([{

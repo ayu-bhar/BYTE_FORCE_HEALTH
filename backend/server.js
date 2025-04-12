@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import { Profile } from './modles/profile.js';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import axios from 'axios';
 dotenv.config();
 
 let connect = await mongoose.connect(process.env.MONGO_URI)
@@ -66,23 +67,38 @@ app.post('/login', async (req, res) => {
     }
 });
 
-app.get("/api/places", async (req, res) => {
-    const { lat, lng, type } = req.query;
-
-    const url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${lng}&radius=1500&type=${type}&key=${process.env.GOOGLE_API_KEY}`;
-
+app.get('/api/medical-shops', async (req, res) => {
     try {
-        const response = await axios.get(url);
-        res.json(response.data.results);
+      const { lat, lng, radius = 1500 } = req.query;
+      
+      const response = await axios.get(
+        'https://maps.googleapis.com/maps/api/place/nearbysearch/json',{
+          params: {
+            location: `${lat},${lng}`,
+            radius: radius,
+            type: 'pharmacy', // Google's type for medical shops
+            keyword: 'medical',
+            key: process.env.GOOGLE_MAPS_API_KEY
+          }
+        });
+      
+      // Filter and format results
+      const medicalShops = response.data.results.map(shop => ({
+        id: shop.place_id,
+        name: shop.name,
+        address: shop.vicinity,
+        location: shop.geometry.location,
+        rating: shop.rating,
+        openNow: shop.opening_hours?.open_now
+      }));
+  
+      res.json(medicalShops);
     } catch (error) {
-        console.error("Google API error:", error.message);
-        res.status(500).json({ error: "Something went wrong" });
+      console.error('Error fetching medical shops:', error);
+      res.status(500).json({ error: 'Failed to fetch medical shops' });
     }
-});
-
-
-
-
+  });
+  
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);

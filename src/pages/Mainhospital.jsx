@@ -111,7 +111,7 @@ const Mainhospital = () => {
                   lat: hospital.geometry.location.lat(),
                   lng: hospital.geometry.location.lng(),
                 }}
-                onClick={() => setSelectedHospital(hospital)} // Open InfoWindow when a marker is clicked
+                onClick={() => setSelectedHospital({ ...hospital, fromMap: true })} // Open InfoWindow when a marker is clicked
               />
             ))}
 
@@ -127,11 +127,26 @@ const Mainhospital = () => {
                 <div>
                   <h3>{selectedHospital.name}</h3>
                   <p>{selectedHospital.vicinity}</p>
-                  <img
-                    src={getPhotoUrl(selectedHospital.photos?.[0])}
-                    alt={selectedHospital.name}
-                    style={{ width: "100%", height: "auto" }}
-                  />
+                  <div className="flex items-center">
+                    {/* Open/Closed Indicator */}
+                    <div
+                      className={`w-4 h-4 rounded-full mr-2 ${
+                        selectedHospital.opening_hours?.open_now ? 'bg-green-500' : 'bg-red-500'
+                      }`}
+                      title={selectedHospital.opening_hours?.open_now ? 'Open Now' : 'Closed'}
+                    ></div>
+                    <span>
+                      {selectedHospital.opening_hours?.open_now ? 'Open Now' : 'Closed'}
+                    </span>
+                  </div>
+                  {/* Conditionally render the image only if selected from the map */}
+                  {selectedHospital.fromMap && selectedHospital.photos?.[0] && (
+                    <img
+                      src={getPhotoUrl(selectedHospital.photos[0])}
+                      alt={selectedHospital.name}
+                      style={{ width: "100%", height: "auto" }}
+                    />
+                  )}
                 </div>
               </InfoWindow>
             )}
@@ -139,15 +154,48 @@ const Mainhospital = () => {
         )}
       </LoadScript>
 
-      <div className="hospitalList">
-        {/* Display a list of hospitals */}
-        {hospitals.map((hospital, index) => (
-          <Hospital
-            key={index}
-            data={hospital}
-            imgUrl={getPhotoUrl(hospital.photos?.[0])}
-          />
-        ))}
+      {/* Hospital List */}
+      <div className="hospitalList bg-transparent shadow-lg rounded-lg p-6 mt-6 max-h-96 overflow-y-auto">
+        <h3 className="text-xl font-semibold mb-4 text-gray-800">
+          Nearby Hospitals ({hospitals.length})
+        </h3>
+        <ul className="space-y-4">
+          {hospitals.map((hospital, index) => (
+            <li
+              key={index}
+              className="flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow duration-200 cursor-pointer"
+              onClick={() => setSelectedHospital(hospital)} // Set the selected hospital when clicked
+            >
+              {/* Left Section: Image and Details */}
+              <div className="flex items-center">
+                {/* Optional Image */}
+                {hospital.photos?.[0] && (
+                  <img
+                    src={getPhotoUrl(hospital.photos[0])}
+                    alt={hospital.name}
+                    className="w-16 h-16 rounded-lg object-cover mr-4"
+                  />
+                )}
+
+                {/* Hospital Details */}
+                <div>
+                  <strong className="block text-lg font-medium text-gray-800">
+                    {hospital.name}
+                  </strong>
+                  <span className="text-sm text-gray-600">{hospital.vicinity}</span>
+                </div>
+              </div>
+
+              {/* Right Section: Open/Closed Indicator */}
+              <div
+                className={`w-5 h-5 rounded-full ${
+                  hospital.opening_hours?.open_now ? 'bg-green-500' : 'bg-red-500'
+                }`}
+                title={hospital.opening_hours?.open_now ? 'Open Now' : 'Closed'}
+              ></div>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
