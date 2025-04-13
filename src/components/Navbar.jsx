@@ -124,17 +124,17 @@ function Navbar() {
         {/* Side Profile */}
         <div style={{ display: 'flex', alignItems: 'center', float: 'right' }}>
           <NavLink to="/profile" style={{ display: 'flex', alignItems: 'center' }}>
-          <lord-icon
-    src="https://cdn.lordicon.com/kdduutaw.json"
-    trigger="hover"
-    colors="primary:#121331,secondary:#000000"
-    >
-</lord-icon>
-            {store === 'true' && (
+            <lord-icon
+              src="https://cdn.lordicon.com/kdduutaw.json"
+              trigger="hover"
+              colors="primary:#121331,secondary:#000000"
+            >
+            </lord-icon>
+            {(store === 'true' && (
               <p style={{ fontSize: '1rem', fontWeight: 'bold', color: '#10b981', marginLeft: '8px' }}>
                 {storen}
               </p>
-            )}
+            ))||(<p style={{ fontSize: '1rem', fontWeight: 'bold', color: '#10b981', marginLeft: '8px' }}>Login / Signup</p>)}
           </NavLink>
         </div>
       </nav>

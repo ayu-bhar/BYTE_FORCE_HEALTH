@@ -16,7 +16,7 @@ const Dropdown = ()=>{
                             src="https://cdn.lordicon.com/nnzfcuqw.json"
                             trigger="hover"
                             stroke="bold"
-                            colors="primary:white,secondary:#ee6d66">
+                            colors="primary:#E5EBF3,secondary:#ee6d66">
                         </lord-icon>{
                              isOpen && (
                                 <ul 
