@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Dropdown from './Dropdown';
-
+import './styles/Navbar.css'
 function Navbar() {
   const store = localStorage.getItem('isAuthenticated');
   let storen = "";
@@ -9,7 +9,7 @@ function Navbar() {
     storen = JSON.parse(localStorage.getItem('user')).Name;
   }
   return (
-    <div>
+    <div className='navBar'>
       <nav
         style={{
           display: 'flex',

@@ -1,35 +1,4 @@
-.navBar{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 10px 20px;
-    list-style: none;
-}
-.navBar h1{
-    font-weight: bold;
-    font-size: 40px;
-}
-.navBar .content{
-    justify-content: flex-end;
-    display: flex;
-    gap: 40px;
-    width: 60vw;
-}
-.navBar .logo{
-    width: 40vw;
-    display: flex;
-    
-    
-}
-.navBar .side{
-    width: 20vw;
-    display: flex;
-    justify-content: space-around;
-}
 
-.border-box{
-    box-sizing: border-box;
-}
 @media screen and (max-width: 850px) {
     .navBar{
         display: none;

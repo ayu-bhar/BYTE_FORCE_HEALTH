@@ -56,26 +56,25 @@ function MobileNavBar() {
         <nav ref={navRef} className={`mobnavBar flex-col ${open ? 'showL' : 'hideL'}`}>
 
           {/* { this seprates the logo} */}
-
-          <div className="side flex">
-            <lord-icon
-              src="https://cdn.lordicon.com/rzsnbiaw.json"
+          <NavLink to = "/profile">
+            <div className="side flex">
+          <lord-icon
+              src="https://cdn.lordicon.com/kdduutaw.json"
               trigger="hover"
-              stroke="bold"
-              colors="primary:#4be1ec,secondary:#9cf4a7"
+              colors="primary:#121331,secondary:#000000"
             >
             </lord-icon>
           </div>
+          </NavLink>
+          
 
           {/* { this seprates the logo and the content} */}
 
           <div className="content flex-col">
-            <NavLink ><li>Home</li></NavLink>
-            <NavLink ><li>Hostpitals</li></NavLink>
-            <NavLink ><li>Blood banks</li></NavLink>
-            <NavLink ><li>Medicines</li></NavLink>
-            <NavLink ><li>Doctors</li></NavLink>
-            <NavLink ><li>Operation Threaters</li></NavLink>
+            <NavLink to = "/"><li>Home</li></NavLink>
+            <NavLink to ="/hospital"><li>Hostpitals</li></NavLink>
+            <NavLink to = "/bloodbank"><li>Blood banks</li></NavLink>
+            <NavLink to = "/medicines"><li>Medicines</li></NavLink>
           </div>
 
           {/* { this seprates the content with the side} */}
