@@ -8,3 +8,11 @@
 .searchContainer input{
   padding: 5px 10px;
 }
+.submit-button{
+  /* border: 1px solid black; */
+  border-radius: 10px;
+  background-color: rgb(7, 230, 7);
+  color: white;
+  padding-left: 8px;
+  padding-right: 8px;
+}
