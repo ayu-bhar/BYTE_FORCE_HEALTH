@@ -86,7 +86,7 @@ function Navbar() {
           >
             Hospitals
           </NavLink>
-          <NavLink
+          <NavLink  to="/bloodbank"
             style={{
               fontSize: '1.2rem',
               textDecoration: 'none',

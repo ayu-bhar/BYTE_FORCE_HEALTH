@@ -15,6 +15,7 @@ import ProtectedRoute from './components/ProtectedRoute'
 import Care from './pages/Care'
 import Mainhospital from './pages/Mainhospital'
 import Medicine from './pages/Medicine'
+import Mainbloodbank from './pages/Mainbloodbank'
 
 
 function App() {
@@ -73,6 +74,11 @@ function App() {
   {
     path : '/hospital',
     element : <><Mainhospital/></>,
+
+  },
+  {
+    path : '/bloodbank',
+    element : <><Mainbloodbank/></>,
 
   },
   {
