@@ -30,7 +30,7 @@ function Box() {
             padding: '20px',
             boxShadow: '0 5px 10px rgba(0, 0, 0, 0.3)',
             transition: 'transform 0.3s',
-            background: 'linear-gradient(to bottom, #e83a30, #ee6d66)',
+            background: 'linear-gradient(to bottom, white, red)',
           }}
           onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.1)')}
           onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
@@ -48,14 +48,14 @@ function Box() {
             className="center"
             style={{
               fontWeight: '800',
-              background: 'linear-gradient(to right,rgb(184, 139, 136), #ee6d66)',
+              // background: 'linear-gradient(to right,rgb(184, 139, 136), #ee6d66)',
 
               color: 'crimson',
             }}
           >
-            LETS DONATE
+            LET'S DONATE
           </h1>
-          <h1 className="center">YOUR BLOOD</h1>
+          <h1 className="center font-bold text-amber-200">YOUR BLOOD</h1>
         </div>
         <Link to="/medicines">
           <div
