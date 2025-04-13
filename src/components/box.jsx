@@ -49,7 +49,7 @@ function Box() {
             style={{
               fontWeight: '800',
               background: 'linear-gradient(to right,rgb(184, 139, 136), #ee6d66)',
-             
+
               color: 'crimson',
             }}
           >
@@ -57,28 +57,30 @@ function Box() {
           </h1>
           <h1 className="center">YOUR BLOOD</h1>
         </div>
+        <Link to="/medicines">
+          <div
+            className="box flex-col items-center"
+            style={{
+              borderRadius: '50%',
+              padding: '20px',
+              boxShadow: '0 5px 10px rgba(0, 0, 0, 0.3)',
+              transition: 'transform 0.3s',
+              background: 'linear-gradient(to bottom, #51cf66, #10b981)',
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.1)')}
+            onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
+          >
+            <lord-icon
+              id="drop"
+              src="https://cdn.lordicon.com/fyutcuil.json"
+              trigger="hover"
+              stroke="bold"
+            ></lord-icon>
+            <h1 className="center">MEDICINE</h1>
+            <h1 className="center">STORES</h1>
+          </div>
+        </Link>
 
-        <div
-          className="box flex-col items-center"
-          style={{
-            borderRadius: '50%',
-            padding: '20px',
-            boxShadow: '0 5px 10px rgba(0, 0, 0, 0.3)',
-            transition: 'transform 0.3s',
-            background: 'linear-gradient(to bottom, #51cf66, #10b981)',
-          }}
-          onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.1)')}
-          onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
-        >
-          <lord-icon
-            id="drop"
-            src="https://cdn.lordicon.com/fyutcuil.json"
-            trigger="hover"
-            stroke="bold"
-          ></lord-icon>
-          <h1 className="center">MEDICINE</h1>
-          <h1 className="center">STORES</h1>
-        </div>
 
         <Link
           to="/carecompass"
